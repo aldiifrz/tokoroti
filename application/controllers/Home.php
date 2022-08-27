@@ -1,8 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller {
-    public function __construct() {
+class Home extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
 
         $this->load->model(array(
@@ -11,8 +13,9 @@ class Home extends CI_Controller {
         ));
     }
 
-    public function index() {
-        $params['title'] = 'Selamat Datang di Toko Sayur 22';
+    public function index()
+    {
+        $params['title'] = 'Selamat Datang di Toko roti';
 
         $products['products'] = $this->product->get_all_products();
         $products['best_deal'] = $this->product->best_deal_product();
